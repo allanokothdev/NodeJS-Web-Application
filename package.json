@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-web-app",
+  "version": "1.0.0",
+  "description": "NodeJS Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allanokothdev/NodeJS-Web-Application.git"
+  },
+  "keywords": [
+    "NodeJS"
+  ],
+  "author": "Allan Okoth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allanokothdev/NodeJS-Web-Application/issues"
+  },
+  "homepage": "https://github.com/allanokothdev/NodeJS-Web-Application#readme"
+}
