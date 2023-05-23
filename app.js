@@ -1,20 +1,32 @@
-const http = require("http")
-const fs = require("fs")
+const express = require("express")
+const app = express();
 
-const server = http.createServer((request, response) => {
-    let readStream;
-    const url = request.url;
-
-    console.log(`Request made: ${request.url}`);
-    response.writeHead(200, { "Content-Type": "text/html" });
-    if(url === "/contact") {
-        readStream = fs.createReadStream(`${__dirname}/contact.html`, "utf8");
-    } else {
-        readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8");
-    }
-    readStream.pipe(response);
+app.get("/", (req, res) => {
+    res.send("This is homepage");
 });
 
-server.listen(3000, "127.0.0.1", () => 
-    console.log("Server is started on http://127.0.0.1:3000")
-);
+app.get("/contact", (req, res) => {
+    res.send("This is contact page");
+});
+
+app.get("/api/users", (req, res) => {
+    res.setHeader("Content-Type", "text/json");
+    res.send(
+        JSON.stringify([
+            {
+                id: 3,
+                username: "demo_user",
+                email: "demo@demo.com",
+                phone_number: "+49 123 4567 890"
+            },
+            {
+                id: 2,
+                username: "james",
+                email: "james@demo.com",
+                phone_number: "+49 765 111 999",
+            },
+        ])
+    );
+});
+
+app.listen(3000)
