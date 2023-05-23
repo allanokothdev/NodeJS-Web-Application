@@ -15,6 +15,14 @@ const server = http.createServer((request, response) => {
     readStream.pipe(response);
 });
 
+app.get("/", (req, res) => {
+    res.send("This is homepage");
+});
+
+app.get("/contact", (req, res) => {
+    res.send("This is contact page");
+});
+
 server.listen(3000, "127.0.0.1", () =>
     console.log("Server is started on http://127.0.0.1:3000")
 );

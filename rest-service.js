@@ -6,7 +6,7 @@ const app = express();
 
 let USER_DATA = require("./users.json");
 
-app.use(( req, res, next) => {
+app.use((req, res, next) => {
     res.append("Access-Control-Allow-Origin", ["*"]);
     res.append("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
     res.append("Access-Control-Allow-Headers", "Content-Type");
@@ -39,7 +39,7 @@ app.delete("/api/user/:id", (req, res) => {
 //  Add new user
 app.post("/api/user", (req, res) => {
     const { name, age, email } = req.body;
-    if(name && age && email ) {
+    if (name && age && email) {
         USER_DATA = [
             ...USER_DATA,
             {
