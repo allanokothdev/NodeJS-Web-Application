@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/allanokothdev/NodeJS-Web-Application/issues"
   },
-  "homepage": "https://github.com/allanokothdev/NodeJS-Web-Application#readme"
+  "homepage": "https://github.com/allanokothdev/NodeJS-Web-Application#readme",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
