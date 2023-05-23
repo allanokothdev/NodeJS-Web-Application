@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
     } else {
         readStream = fs.createReadStream(`${__dirname}/index.html`, "utf8");
     }
-    readStream.pipe(response)
+    readStream.pipe(response);
 });
 
 server.listen(3000, "127.0.0.1", () =>
