@@ -34,6 +34,22 @@
         a:hover {
             text-decoration: underline;
         }
+
+        ul.users {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.users li {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -43,7 +59,16 @@
         <li><a href="/">Home</a></li>
         <li><a href="/contact">Contact</a></li>
     </ul>
-    <p>This page is running on awesome Node.js sever!</p>
+    <div class="container">
+        <h2>Active Users</h2>
+        <ul class="users">
+            <% data.forEach(function(user){ %>
+                <li><a href="/user/<%= user._id %>">
+                        <%= user.name %> (<%= user.age %>)
+                    </a></li>
+                <% }); %>
+        </ul>
+    </div>
 </body>
 
 </html>
